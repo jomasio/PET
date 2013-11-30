@@ -1,12 +1,7 @@
 package BR.COM.PET.NEGOCIO;
 
 public class Animais {
-	/**O sistema deve permitir o cadastro de novos animais. 
-	As principais informações são: nome (se existir),
-	idade, tipo de animal (cão e gato), preço, data de entrada, 
-	data de saída (Se o animal já estiver sido vendido). Além disso,
-	todos os animais devem ter fotos para que seja fácil identifica-lo. 
-**/
+	
 	//atributos 
 	private String Nome;
 	private String Idade;

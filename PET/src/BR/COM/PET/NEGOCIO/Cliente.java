@@ -1,7 +1,7 @@
 package BR.COM.PET.NEGOCIO;
 
 public class Cliente {
-	//: nome, endereço, bairro, cidade, estado, cep, tel, cpf e sexo. 
+	
 private String nome ;
 private String endereco;
 private String bairro;

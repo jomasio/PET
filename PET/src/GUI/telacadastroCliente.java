@@ -39,8 +39,9 @@ public class telacadastroCliente extends JFrame {
 	private JTextField textField;
 
 	public telacadastroCliente() {
+		setTitle("Cadastro De Cliente");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\jomasio\\Saved Games\\Pictures\\animais domesticos1.jpg"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(105, 105, 105));
@@ -142,7 +143,7 @@ public class telacadastroCliente extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblCadastroDeCliente = new JLabel("Cadastro de Cliente");
+		JLabel lblCadastroDeCliente = new JLabel(" Cliente");
 		lblCadastroDeCliente.setFont(new Font("Verdana", Font.PLAIN, 27));
 		lblCadastroDeCliente.setBounds(51, 11, 310, 26);
 		panel.add(lblCadastroDeCliente);
