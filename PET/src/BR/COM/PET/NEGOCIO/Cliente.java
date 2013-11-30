@@ -35,7 +35,7 @@ public String getNome() {
 public void setNome(String nome) {
 	this.nome = nome;
 }
-public String getEndereco() {
+public String getendereco() {
 	return endereco;
 }
 public void setEndereco(String endereco) {
