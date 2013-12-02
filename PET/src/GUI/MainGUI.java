@@ -11,6 +11,7 @@ import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class MainGUI extends JFrame {
@@ -20,6 +21,8 @@ public class MainGUI extends JFrame {
 	private JButton btnVenda;
 	private JButton btnVisualizarHistorico;
 	public MainGUI() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\jomasio\\Saved Games\\Pictures\\animais domesticos1.jpg"));
+		setTitle("TELA INICIAL");
 		
 		eventos = new TratarEvento();
 		getContentPane().setLayout(new BorderLayout(0, 0));
@@ -89,6 +92,9 @@ public class MainGUI extends JFrame {
 		}if(e.getSource()==  btnCadastrarPet){
 			TelaCadastroPet telaPet = new TelaCadastroPet();
 			telaPet.setVisible(true);
+		}if(e.getSource()==btnVenda){
+			TelaVendas telaVenda = new TelaVendas();
+			telaVenda.setVisible(true);
 		}
             
 		

@@ -25,8 +25,8 @@ public class TelaCadastroPet extends JFrame {
 	private JTextField textTipo;
 	private JTextField textpreco;
 	private JTextField textDataDeEntrada;
-	private JTextField textField_5;
-	private final JLabel lblNewLabel = new JLabel("Nome");
+	private JTextField textDataDeSaida;
+	private final JLabel lblNome = new JLabel("Nome");
 	private final JButton btnCancelar = new JButton("CANCELAR");
 
 	
@@ -67,32 +67,32 @@ public class TelaCadastroPet extends JFrame {
 		contentPane.add(textDataDeEntrada);
 		textDataDeEntrada.setColumns(10);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(274, 166, 80, 20);
-		contentPane.add(textField_5);
-		textField_5.setColumns(10);
-		lblNewLabel.setBounds(10, 53, 98, 31);
-		contentPane.add(lblNewLabel);
+		textDataDeSaida = new JTextField();
+		textDataDeSaida.setBounds(274, 166, 80, 20);
+		contentPane.add(textDataDeSaida);
+		textDataDeSaida.setColumns(10);
+		lblNome.setBounds(10, 53, 98, 31);
+		contentPane.add(lblNome);
 		
-		JLabel lblNewLabel_1 = new JLabel("Idade");
-		lblNewLabel_1.setBounds(61, 95, 46, 14);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblIdade = new JLabel("Idade");
+		lblIdade.setBounds(61, 95, 46, 14);
+		contentPane.add(lblIdade);
 		
-		JLabel lblNewLabel_2 = new JLabel("Tipo");
-		lblNewLabel_2.setBounds(234, 129, 46, 14);
-		contentPane.add(lblNewLabel_2);
+		JLabel lblTipo = new JLabel("Tipo");
+		lblTipo.setBounds(234, 129, 46, 14);
+		contentPane.add(lblTipo);
 		
-		JLabel lblNewLabel_3 = new JLabel("Preco");
-		lblNewLabel_3.setBounds(73, 129, 46, 14);
-		contentPane.add(lblNewLabel_3);
+		JLabel lblPreco = new JLabel("Preco");
+		lblPreco.setBounds(73, 129, 46, 14);
+		contentPane.add(lblPreco);
 		
-		JLabel lblNewLabel_4 = new JLabel("Data De Entrada");
-		lblNewLabel_4.setBounds(21, 169, 98, 14);
-		contentPane.add(lblNewLabel_4);
+		JLabel lblDataDeEntrada = new JLabel("Data De Entrada");
+		lblDataDeEntrada.setBounds(21, 169, 98, 14);
+		contentPane.add(lblDataDeEntrada);
 		
-		JLabel lblNewLabel_5 = new JLabel("Data De Saida");
-		lblNewLabel_5.setBounds(200, 169, 80, 14);
-		contentPane.add(lblNewLabel_5);
+		JLabel lblDataDeSaida = new JLabel("Data De Saida");
+		lblDataDeSaida.setBounds(200, 169, 80, 14);
+		contentPane.add(lblDataDeSaida);
 		
 		JButton btnSalvar = new JButton("SALVAR");
 		btnSalvar.setBounds(96, 209, 89, 23);
