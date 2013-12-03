@@ -1,4 +1,4 @@
-package BR.COM.PET.NEGOCIO;
+package br.com.pet.negocio;
 
 public class Animais {
 	
@@ -13,7 +13,8 @@ public class Animais {
 	//construtores
 	
 	public Animais (){
-		
+		DataDeEntrada = "null";
+		DataDeSaida = "0";
 	}
 	public Animais(String nome, String idade, String tipo, String preco,
 			String dataDeEntrada, String dataDeSaida) {
@@ -62,7 +63,17 @@ public class Animais {
 		DataDeSaida = dataDeSaida;
 	}
 	
-	
-	
+	@Override
+	public String toString() {
+		StringBuilder out = new StringBuilder("Animal:\n");
+		out.append("Nome: "+Nome);
+		out.append("\nIdade: "+Idade);
+		out.append("\nTipo: "+Tipo);
+		out.append("\nPreco: "+Preco);
+		out.append("\nDataDeEntrada: "+DataDeEntrada);
+		out.append("\nDataDeSaida: "+DataDeSaida);
+		
+		return out.toString();
+	}
 	
 }

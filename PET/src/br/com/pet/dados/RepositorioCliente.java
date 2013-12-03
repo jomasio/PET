@@ -1,19 +1,25 @@
-package BR.COM.PET.DADOS;
+package br.com.pet.dados;
 
-import BR.COM.PET.NEGOCIO.Cliente;
+import org.apache.log4j.Logger;
+
+import br.com.pet.negocio.Cliente;
+import br.com.pet.util.UtilGUI;
 
 public class RepositorioCliente extends Conexao {
+	
+	private static Logger Log = Logger.getLogger(RepositorioCliente.class);
+	
 	private String sql = "";
 
 	public RepositorioCliente() {
-
+		
 	}
 
-	public void salvarCLIENTE(Cliente novoCliente) throws Exception {
+	public boolean salvarCLIENTE(Cliente novoCliente) throws Exception {
 		openBD();
-
-		if (novoCliente != null) {
-
+		 boolean retorno = false;
+		
+		try{
 			sql = "INSERT INTO main.Cliente(nome,endereco,bairro,cidade,estado,cep,cpf,sexo,Tel)VALUES(?,?,?,?,?,?,?,?,?)";
 
 			prstm = conexao.prepareStatement(sql);
@@ -28,10 +34,15 @@ public class RepositorioCliente extends Conexao {
 			prstm.setString(9, novoCliente.getTel());
 
 			prstm.executeUpdate();
-
-			throw new Exception("Cliente cadastrado com sucesso!!");
+			retorno = true;
+			
+		}catch(Exception e){
+			UtilGUI.errorMessage("Erro ao Cadastrar o Cliente: \n\nRazão:"+e.getMessage());
+			Log.error("Erro ao Cadastrar o Cliente: "+e.getMessage());
 		}
-
+		
+		return retorno;
+	
 	}
 
 }

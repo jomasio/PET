@@ -1,7 +1,7 @@
-package BR.COM.PET.CONTROLE;
+package br.com.pet.controle;
 
-import BR.COM.PET.DADOS.RepositorioCliente;
-import BR.COM.PET.NEGOCIO.Cliente;
+import br.com.pet.dados.RepositorioCliente;
+import br.com.pet.negocio.Cliente;
 
 public class ControleDeCliente {
 

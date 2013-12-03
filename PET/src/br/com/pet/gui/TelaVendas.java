@@ -1,4 +1,4 @@
-package GUI;
+package br.com.pet.gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

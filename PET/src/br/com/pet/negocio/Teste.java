@@ -1,9 +1,9 @@
-package BR.COM.PET.NEGOCIO;
+package br.com.pet.negocio;
 
 import javax.swing.JOptionPane;
 
-import BR.COM.PET.DADOS.Conexao;
-import BR.COM.PET.DADOS.RepositorioCliente;
+import br.com.pet.dados.Conexao;
+import br.com.pet.dados.RepositorioCliente;
 
 public class Teste {
 

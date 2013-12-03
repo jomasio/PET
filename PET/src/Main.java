@@ -1,4 +1,4 @@
-import GUI.MainGUI;
+import br.com.pet.gui.MainGUI;
 
 
 public class Main {

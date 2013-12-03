@@ -1,4 +1,4 @@
-package BR.COM.PET.NEGOCIO;
+package br.com.pet.negocio;
 
 import javax.swing.JOptionPane;
 

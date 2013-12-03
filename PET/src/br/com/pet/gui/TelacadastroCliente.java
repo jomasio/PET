@@ -1,29 +1,24 @@
-package GUI;
+package br.com.pet.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import BR.COM.PET.CONTROLE.ControleDeCliente;
-import BR.COM.PET.DADOS.RepositorioCliente;
-import BR.COM.PET.NEGOCIO.Cliente;
-
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import javax.swing.JTextPane;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JTextField;
-import java.awt.Dialog.ModalExclusionType;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class telacadastroCliente extends JFrame {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import br.com.pet.controle.ControleDeCliente;
+import br.com.pet.dados.RepositorioCliente;
+import br.com.pet.negocio.Cliente;
+import br.com.pet.util.UtilGUI;
+
+public class TelacadastroCliente extends JFrame {
 
 	private JPanel contentPane;
 	private ControleDeCliente controle = new ControleDeCliente();
@@ -37,8 +32,14 @@ public class telacadastroCliente extends JFrame {
 	private JTextField textsexo;
 	private JButton btnSalvar;
 	private JTextField textField;
+	private JButton btnCancelar;
+	private TrataEvento eventos;
+	
 
-	public telacadastroCliente() {
+	public TelacadastroCliente() {
+		
+		eventos = new TrataEvento();
+		
 		setTitle("Cadastro De Cliente");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\jomasio\\Saved Games\\Pictures\\animais domesticos1.jpg"));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -132,10 +133,12 @@ public class telacadastroCliente extends JFrame {
 		
 		btnSalvar = new JButton("Salvar");
 		btnSalvar.setBounds(61, 229, 89, 23);
+		btnSalvar.addActionListener(eventos);
 		contentPane.add(btnSalvar);
 		
-		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBounds(223, 229, 89, 23);
+		btnCancelar.addActionListener(eventos);
 		contentPane.add(btnCancelar);
 		
 		JPanel panel = new JPanel();
@@ -158,7 +161,7 @@ public class telacadastroCliente extends JFrame {
 		contentPane.add(lblcpf);
 		
 	}
-	private class trataEvento implements ActionListener{
+	private class TrataEvento implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent evento) {
@@ -181,19 +184,45 @@ public class telacadastroCliente extends JFrame {
 					c.setSexo(textsexo.getText());
 					c.setTel(texttel.getText());
 					
+					if( repoCliente.salvarCLIENTE(c) ){
+						UtilGUI.successMessage("O Cliente foi cadastrado com sucesso.");
+						dispose();
+					}
 					
-					repoCliente.salvarCLIENTE(c);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				
+			}if(evento.getSource() == btnCancelar){
+				dispose();
 			}
-			
-			// TODO Auto-generated method stub
 			
 		}
 		
 		
+	}
+	
+	/**
+	 * Somente para Teste. Deletar na versão final
+	 */
+	@Deprecated
+	private void preencherCampos() {
+		
+		textbairro.setText("CDU");
+		textcidade.setText("Recife");
+		textcep.setText("678906-235");
+		textendereco.setText("Passagem Lindalva");
+		textestado.setText("Pernambuco");
+		textnome.setText("Fulano da Silva");
+		textsexo.setText("Masculino");
+		texttel.setText("(81) 8767-7657");
+		
+	}
+	
+	public static void main(String[] args) {
+		TelacadastroCliente telacadastroCliente = new TelacadastroCliente();
+		telacadastroCliente.preencherCampos();
+		telacadastroCliente.setVisible(true);
 	}
 }
