@@ -51,6 +51,8 @@ public class Vendas {
 	public void setAnimais(String animais) {
 		Animais = animais;
 	}
+
+	
 	
 	
 }

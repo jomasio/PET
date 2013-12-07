@@ -1,8 +1,12 @@
 package br.com.pet.util;
 
+import java.sql.ResultSet;
+import java.util.Map;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class UtilGUI {
 
@@ -22,6 +26,21 @@ public class UtilGUI {
 		
 		JOptionPane.showMessageDialog(null, message,"Erro",0,errorIcon);
 
+	}
+
+	public static Map<String, String> getMapFromResultSet(ResultSet rs) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static DefaultTableModel buildTableModel(ResultSet rs) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static void printArray(String[] valores) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

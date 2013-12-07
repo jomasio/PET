@@ -1,5 +1,7 @@
 package br.com.pet.negocio;
 
+import java.sql.ResultSet;
+
 public class Cliente {
 	
 private String nome ;
@@ -82,6 +84,11 @@ public String getSexo() {
 }
 public void setSexo(String sexo) {
 	this.sexo = sexo;
+}
+public static ResultSet pesquisaComRetorno(String string, String string2,
+		String valueOf, boolean b) {
+	// TODO Auto-generated method stub
+	return null;
 }
  
 

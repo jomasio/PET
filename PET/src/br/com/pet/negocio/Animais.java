@@ -1,5 +1,9 @@
 package br.com.pet.negocio;
 
+import java.sql.ResultSet;
+
+
+
 public class Animais {
 	
 	//atributos 
@@ -75,5 +79,15 @@ public class Animais {
 		
 		return out.toString();
 	}
+	public static void cadastrarTransacao(Transacao vendas) {
+		// TODO Auto-generated method stub
+		
+	}
+	public static ResultSet pesquisaComRetorno(String string, String string2,
+			String valueOf, boolean b) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 }

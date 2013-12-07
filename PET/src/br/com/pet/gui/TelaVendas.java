@@ -1,6 +1,7 @@
 package br.com.pet.gui;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -13,20 +14,53 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
+
+import br.com.pet.controle.ControleDeVendas;
+import br.com.pet.dados.RepositorioPet;
+import br.com.pet.dados.RepositorioVendas;
+
+import br.com.pet.negocio.Animais;
+import br.com.pet.negocio.Vendas;
+import br.com.pet.util.UtilGUI;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
 
 public class TelaVendas extends JFrame {
+	private JPanel panel;
 	private JTextField textClientes;
 	private JTextField textValor;
 	private JTextField textDataDeVendas;
 	private JTextField textAnimais;
+	private JButton buscarcliente;
+	private JButton buscaranimias;
+	private JButton salvar;
+	private JButton cancelar;
+
+	private TratadorEventos eventos;
+
+	public void Init() {
+		eventos = new TratadorEventos();
+	}
+
+	private RepositorioVendas repo;
+
+	private void init() {
+		repo = new RepositorioVendas();
+
+	}
 
 	public TelaVendas() {
+
+		init();
+
 		getContentPane().setBackground(Color.GRAY);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\jomasio\\Saved Games\\Pictures\\animais domesticos1.jpg"));
+		setIconImage(Toolkit
+				.getDefaultToolkit()
+				.getImage(
+						"C:\\Users\\jomasio\\Saved Games\\Pictures\\animais domesticos1.jpg"));
 		setTitle("Tela de Vendas");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 778, 488);
@@ -88,5 +122,42 @@ public class TelaVendas extends JFrame {
 		getContentPane().add(lblDataDeVendas);
 		getContentPane().add(textDataDeVendas);
 		getContentPane().add(btnCANCELAR);
+
+		JButton btnbuscarCliente = new JButton("Buscar");
+		btnbuscarCliente.setBounds(395, 74, 89, 23);
+		getContentPane().add(btnbuscarCliente);
+
+		JButton btnBuscarAnimais = new JButton("Buscar");
+		btnBuscarAnimais.setBounds(395, 288, 89, 23);
+		getContentPane().add(btnBuscarAnimais);
+
+		JButton btnsalvar = new JButton("SALVAR");
+		btnsalvar.setBounds(126, 320, 89, 23);
+		getContentPane().add(btnsalvar);
+
+		JButton btncancelar = new JButton("CANCELAR");
+		btncancelar.setBounds(301, 320, 89, 23);
+		getContentPane().add(btncancelar);
+
+	}
+
+	public class TratadorEventos implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+
+			if (e.getSource() == buscarcliente
+					&& !textClientes.getText().equals("")) {
+
+				UtilGUI.successMessage("vendas cadastrado com sucesso");
+				dispose();
+
+			}
+			if (e.getSource() == cancelar) {
+				dispose();
+
+			}
+		}
 	}
 }
